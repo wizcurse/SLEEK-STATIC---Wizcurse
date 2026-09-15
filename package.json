@@ -1,0 +1,16 @@
+{
+  "name": "scramjet-proxy-html",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "serve . --listen 3000",
+    "dev": "serve . --listen 3000",
+    "copy-epoxy": "node scripts/copy-epoxy.mjs",
+    "postinstall": "npm run copy-epoxy"
+  },
+  "dependencies": {
+    "@mercuryworkshop/epoxy-transport": "3.0.1",
+    "serve": "14.2.6"
+  }
+}
