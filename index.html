@@ -3703,8 +3703,12 @@ const settingsPages = document.querySelector(".settings-pages");
 const resetHomeButton = document.getElementById("sj-reset-home");
 const openBlankButton = document.getElementById("sj-open-blank");
 openBlankButton?.addEventListener("click", () => {
-	allowUnload = true;
-	window.location.replace("about:blank");
+	const blankWindow = window.open("", "_blank", "noopener,noreferrer");
+	if (!blankWindow) {
+		showProxyError("Allow pop-ups to open SLEEK in a new about:blank tab.");
+		return;
+	}
+	blankWindow.location.href = "about:blank";
 });
 if (resetHomeButton) {
 	resetHomeButton.closest(".settings-info-row")?.removeAttribute("hidden");
