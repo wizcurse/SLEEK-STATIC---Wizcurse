@@ -396,7 +396,12 @@ body.is-home #sj-tab-address-bar #sj-home { display: none; }
 #sj-frames { position: relative; flex: 1; }
 #sj-form { position: relative; z-index: 30; pointer-events: auto; box-sizing: border-box; width: auto; height: auto; margin: 0; padding: 0; background: transparent; border: 0; }
 #sj-form input, #sj-tab-address-bar input { pointer-events: auto; user-select: text; -webkit-user-select: text; }
-body:not(.is-home) #sj-form { display: none; }
+body:not(.is-home) #sj-form,
+body.music-open #sj-form,
+body.games-open #sj-form,
+body.slick-open #sj-form,
+body:has(#sj-settings-panel:not([hidden])) #sj-form,
+body:has(#sj-account-panel:not([hidden])) #sj-form { display: none; }
 #sj-saved-bar { position: fixed; top: 84px; left: 0; z-index: 10; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; width: 100%; min-height: 36px; box-sizing: border-box; padding: 4px 14px; border-bottom: 1px solid #292929; background: #101010; color: #888; font-size: 12px; }
 #sj-saved-bar[hidden] { display: none; }
 #sj-saved-links { display: flex; flex: 1 1 240px; flex-wrap: wrap; gap: 6px; min-width: 0; overflow: visible; }
